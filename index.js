@@ -77,6 +77,7 @@ const propTypes = {
     enableLongPress:                PropTypes.bool,
     optionsTestIDPrefix:            PropTypes.string,
     header:                         PropTypes.node,
+    flatListPassThruProps:          PropTypes.object,
 };
 
 const defaultProps = {
@@ -132,6 +133,7 @@ const defaultProps = {
     enableLongPress:                false,
     optionsTestIDPrefix:            'default',
     header:                         undefined,
+    flatListPassThruProps:          {},
 };
 
 export default class ModalSelector extends React.Component {
@@ -281,6 +283,7 @@ export default class ModalSelector extends React.Component {
             cancelTextStyle,
             cancelText,
             header,
+            flatListPassThruProps,
         } = this.props;
 
         let options = data.map((item, index) => {
@@ -322,6 +325,7 @@ export default class ModalSelector extends React.Component {
                                 accessibilityLabel={scrollViewAccessibilityLabel}
                                 keyExtractor={this.props.keyExtractor}
                                 renderItem={this.renderFlatlistOption}
+                                {...flatListPassThruProps}
                             />
                             :
                             <ScrollView
