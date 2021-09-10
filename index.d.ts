@@ -367,6 +367,11 @@ interface IModalSelectorProps<TOption> {
    * Default for each option's testID: 'default-<optionLabel>'
    */
   optionsTestIDPrefix?: string;
+
+  /**
+   * Render a header above the list
+   */
+   header?: React.ReactNode;
  
 }
 

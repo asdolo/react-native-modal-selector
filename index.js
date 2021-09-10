@@ -76,6 +76,7 @@ const propTypes = {
     enableShortPress:               PropTypes.bool,
     enableLongPress:                PropTypes.bool,
     optionsTestIDPrefix:            PropTypes.string,
+    header:                         PropTypes.node,
 };
 
 const defaultProps = {
@@ -130,6 +131,7 @@ const defaultProps = {
     enableShortPress:               true,
     enableLongPress:                false,
     optionsTestIDPrefix:            'default',
+    header:                         undefined,
 };
 
 export default class ModalSelector extends React.Component {
@@ -278,6 +280,7 @@ export default class ModalSelector extends React.Component {
             cancelStyle,
             cancelTextStyle,
             cancelText,
+            header,
         } = this.props;
 
         let options = data.map((item, index) => {
@@ -310,6 +313,7 @@ export default class ModalSelector extends React.Component {
             <Overlay {...overlayProps}>
                 <View style={[styles.overlayStyle, overlayStyle]}>
                     <View style={[styles.optionContainer, optionContainerStyle]}>
+                        {header}
                         {listType === 'FLATLIST'?
                             <FlatList
                                 data={data}

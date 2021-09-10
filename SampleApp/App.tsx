@@ -129,6 +129,29 @@ export const SampleApp = () => {
         }}
         componentExtractor={(option) => <ListItem data={option} />}
       />
+
+      {/* With a fixed header at the top of the list  */}
+      <ModalSelector
+        data={countryList}
+        keyExtractor={(x) => x.name}
+        labelExtractor={(x) => x.name}
+        initValue="listType without FlatList"
+        initValueTextStyle={{ color: "black" }}
+        selectStyle={{ borderColor: "black" }}
+        selectTextStyle={{ color: "blue" }}
+        onChange={(option) => {
+          setTextInputValue(option.name);
+        }}
+        componentExtractor={(option) => <ListItem data={option} />}
+        header={
+          <View style={{ padding: 16, alignItems: 'center' }}>
+            <Text style={{ fontSize: 16, color: 'black' }}>What country would you pick?</Text>
+            <Text style={{ fontSize: 13, color: '#bbbbbb' }}>
+              Please, select an option
+            </Text>
+          </View>
+        }
+      />
     </View>
   );
 };

@@ -174,6 +174,7 @@ Prop                | Type     | Optional | Default      | Description
 `enableShortPress`          | bool   | Yes | true               | enables short press. This is regular touch behavior.
 `enableLongPress`           | bool   | Yes | false              | enables long press. When true, `onModalOpen` returns `{longPress: true}`
 `optionsTestIDPrefix`       | string   | Yes | `'default'`      | This prefixes each selectable option's testID prop if no testID keys are provided in `props.data` array objects. Default for each option's testID: 'default-\<optionLabel\>'
+`header`     | node   | Yes | undefined          | Render a header above the list
 
 ### Methods
 
